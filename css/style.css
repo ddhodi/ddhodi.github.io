@@ -541,6 +541,19 @@ footer {
         padding-top: 20px;
     }
 
+    .wrap_card {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 70px;
+        padding-bottom: 0;
+        row-gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        column-gap: 2rem;
+    }
+
     .development {
         margin-bottom: 20px;
     }
@@ -568,7 +581,9 @@ footer {
     
     .skill__title {
         color: black;
-        font-size: 35px;
+        text-align: center;
+        font-size: 30px;
+        margin: 0;
         margin-top: 90px;
         padding-top: 20px;
     }
