@@ -460,6 +460,7 @@ footer {
 
     .hero__title a {
         text-decoration: none;
+        border-radius: 15px;
     }
 
     .hero__title button:hover {
