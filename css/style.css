@@ -100,9 +100,9 @@ label #close {
     justify-content: center;
     background-color: rgb(192, 132, 19);
     color: white;
-    font-size: 18px;
+    font-size: 22px;
     border: 0;
-    width: 210px;
+    width: 215px;
     padding: 15px;
     border-radius: 15px;
     margin: 15px;
@@ -430,7 +430,7 @@ footer {
     }
 
     .hero__title p {
-        font-size: 18px;
+        font-size: 16px;
         line-height: 1.4;
         padding-left: 12px;
         padding-top: 10px;
@@ -447,9 +447,9 @@ footer {
         justify-content: center;
         background-color: rgb(192, 132, 19);
         color: white;
-        font-size: 18px;
+        font-size: 22px;
         border: 0;
-        width: 210px;
+        width: 215px;
         padding: 15px;
         border-radius: 15px;
         margin-top: 10px;
