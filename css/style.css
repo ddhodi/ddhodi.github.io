@@ -426,7 +426,7 @@ footer {
         overflow: hidden;
         display: flex;
         position: relative;
-        padding-bottom: 500px;
+        padding-bottom: 200px;
     }
 
     .hero__title {
