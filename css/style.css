@@ -372,7 +372,8 @@ footer {
     }
 
     .logo {
-        line-height: 80px;
+        line-height: 65px;
+        padding-top: -100px;
         display: inline-block;
         margin: 0;
         color: rgb(255, 255, 255);
@@ -380,6 +381,7 @@ footer {
 
     label #btn {
         display: block;
+        line-height: 65px;
     }
 
     ul {
