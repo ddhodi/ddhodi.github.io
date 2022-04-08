@@ -139,6 +139,7 @@ label #close {
 .about {
   text-align: center;
   padding: 5px;
+  margin-bottom: 80px;
 }
 
 .wrapper__text {
