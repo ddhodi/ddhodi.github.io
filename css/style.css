@@ -372,7 +372,7 @@ footer {
   }
 }
 
-@media (min-width: 300px) and (max-width: 800px) {
+@media (min-width: 200px) and (max-width: 800px) {
   ::-webkit-scrollbar {
     display: none;
   }
