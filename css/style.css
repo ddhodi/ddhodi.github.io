@@ -210,51 +210,59 @@ label #close {
 .portofolio {
   text-align: center;
   padding: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  overflow-x: hidden;
 }
 
 .portofolio__title {
   color: black;
   font-size: 35px;
   margin-top: 90px;
+  margin-bottom: 80px;
   padding-top: 20px;
 }
 
-.wrap_card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-top: 120px;
-  padding-bottom: 200px;
-  row-gap: 20px;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  column-gap: 2rem;
-}
-
-.card-atas img {
-  width: 240px;
-  border-radius: 20px;
-}
-
-.warp_card a {
-  color: black;
-  text-decoration: none;
-}
-
-.card-atas {
+.kotak {
+  color: #fff;
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   overflow: hidden;
-  border-radius: 30px;
-  height: 180px;
-  box-shadow: 6px 7px rgb(233, 232, 232);
+  width: 300px;
+  height: 215px;
+  margin: 10px;
+  border-radius: 6px;
+  box-shadow: 7px 4px 5px rgba(0, 0, 0, 0.3);
+  transform: translateX(-400%);
+  transition: transform 0.4s ease;
+  cursor: pointer;
 }
 
-.card-bawah {
+.kotak img {
+  border-radius: 6px;
+  width: 300px;
+  height: 215px;
+}
+
+.kotak:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+.kotak.show {
+  transform: translateX(0);
+}
+
+.detail {
   position: absolute;
-  bottom: 200px;
-  width: 250px;
-  height: 200px;
+  color: #073b4c;
+  bottom: 300px;
+  width: 300px;
+  height: 215px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -262,15 +270,15 @@ label #close {
   cursor: pointer;
   backdrop-filter: blur(10px);
   transition: 0.3s;
-  border-radius: 30px;
+  border-radius: 6px;
 }
 
-.card-atas:hover .card-bawah {
+.kotak:hover .detail {
   bottom: 0;
 }
 
-.card-bawah h2 {
-  color: rgba(44, 43, 43, 0.726);
+.kotak h2 {
+  font-size: 45px;
 }
 
 /*--------------- Skill ----------*/
@@ -448,7 +456,7 @@ footer {
 
   .hero__title span {
     font-weight: 600;
-    text-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
   }
 
   .hero__title button {
@@ -555,20 +563,25 @@ footer {
     font-size: 30px;
     margin: 0;
     margin-top: 90px;
+    margin-bottom: 50px;
     padding-top: 20px;
   }
 
-  .wrap_card {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-top: 70px;
-    padding-bottom: 0;
-    row-gap: 25px;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 2rem;
+  .kotak {
+    width: 200px;
+    height: 145px;
+    margin: 20px;
+    border-radius: 6px;
+    box-shadow: 7px 4px 5px rgba(0, 0, 0, 0.3);
+    transform: translateX(-400%);
+    transition: transform 0.4s ease;
+    cursor: pointer;
+  }
+
+  .kotak img {
+    border-radius: 6px;
+    width: 200px;
+    height: 145px;
   }
 
   .development {
