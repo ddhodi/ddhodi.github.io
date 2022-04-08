@@ -139,7 +139,6 @@ label #close {
 .about {
   text-align: center;
   padding: 5px;
-  margin-bottom: 80px;
 }
 
 .wrapper__text {
@@ -492,6 +491,7 @@ footer {
   .about {
     text-align: center;
     padding: 10px;
+    margin-bottom: 80px;
   }
 
   .wrapper__text {
