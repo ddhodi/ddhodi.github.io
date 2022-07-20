@@ -378,6 +378,10 @@ footer {
     display: none;
   }
 
+  * {
+    scroll-behavior: smooth;
+  }
+
   .logo {
     line-height: 65px;
     padding-top: -100px;
