@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              mons: "Montserrat",
+            },
+            fontSize: {
+              11: "180px",
+            },
+            width: {
+              700: "700px",
+              600: "600px",
+            },
+            height: {
+              90: "30rem",
+            },
+          },
+        },
+      };
+    </script>
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .navbar-fixed {
+          position: fixed;
+          z-index: 9999;
+          background-color: rgba(32, 89, 116, 0.589);
+          backdrop-filter: blur(5px);
+        }
+        .hamburger-line {
+          display: block;
+          width: 30px;
+          height: 2px;
+          margin-top: 0.5rem;
+          margin-bottom: 0.5rem;
+          background-color: rgb(255 255 255);
+        }
+        .shadow-font {
+          text-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+        }
+        @media (max-width: 500px) {
+          .hamburger-width {
+            margin-left: 2rem;
+          }
+          .quote-about {
+            margin-left: 15px;
+          }
+          .text-about {
+            margin-right: 15px;
+            margin-left: 15px;
+          }
+          .sm-bg {
+            padding-top: 6rem /* 96px */;
+            padding-bottom: 6rem /* 96px */;
+          }
+          .sm-hello {
+            font-size: 120px;
+          }
+          .image-width {
+            display: none;
+          }
+          .card-porto {
+            width: 22rem;
+            margin-right: auto;
+            margin-left: auto;
+          }
+          .image-bottom {
+            margin-bottom: 5px;
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header
+      class="absolute top-0 left-0 z-10 flex items-center w-full bg-[#103F4E] text-white"
+    >
+      <div class="container">
+        <div class="relative flex items-center justify-between">
+          <div class="px-11">
+            <a href="#" class="block py-6 text-2xl font-bold">Dhodi</a>
+          </div>
+          <div class="flex items-center px-8">
+            <button
+              id="hamburger"
+              name="hamburger"
+              type="button"
+              class="absolute block right-12 lg:hidden"
+            >
+              <span
+                class="transition duration-300 ease-in-out origin-top-left hamburger-line"
+              ></span>
+              <span
+                class="transition duration-300 ease-in-out hamburger-line"
+              ></span>
+              <span
+                class="transition duration-300 ease-in-out origin-bottom-left hamburger-line"
+              ></span>
+            </button>
+
+            <nav
+              id="nav-list"
+              class="hidden absolute bg-white shadow-lg max-w-[385px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none"
+            >
+              <ul class="block hamburger-width lg:flex">
+                <li class="group">
+                  <a
+                    href="#"
+                    class="flex py-2 mx-4 font-semibold text-black group-hover:underline lg:text-white"
+                    >Beranda</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#about"
+                    class="flex py-2 mx-4 font-semibold text-black group-hover:underline lg:text-white"
+                    >Tentang Saya</a
+                  >
+                </li>
+                <li class="group">
+                  <a
+                    href="#project"
+                    class="flex py-2 mx-4 font-semibold text-black group-hover:underline lg:text-white"
+                    >Project</a
+                  >
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero relative py-20 sm-bg bg-[#073b4c] w-full">
+      <div class="pt-10 ml-9 lg:ml-44">
+        <span
+          class="font-semibold text-white shadow-font sm-hello font-mons text-9xl lg:text-11"
+          >HE<br />LLO.</span
+        >
+        <p class="text-2xl text-white font-mons">
+          I'am Dhodi Surya Sayogo<br />Frontend Developer
+        </p>
+        <div class="mt-4">
+          <a
+            href="https://drive.google.com/file/d/15fTMBoT2BPs-E9KF2h5xpBxpNzoiLjge/view?usp=sharing"
+            class="inline-block px-5 py-3 text-white bg-[#C08413] rounded-lg shadow-lg font-mons w-52 text-center transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300"
+            target="_blank"
+            ><button>Download CV</button></a
+          >
+        </div>
+      </div>
+
+      <div class="float-right mt-[-604px] image-width">
+        <img class="flex w-700" src="./public/img/profil.png" alt="" />
+      </div>
+    </div>
+
+    <div id="about" class="relative py-20">
+      <h1 class="pt-12 text-3xl font-bold text-center">Tentang Saya</h1>
+      <div class="float-left ml-10 left-10 mt-[50px] z-10 image-width">
+        <img class="flex w-600" src="./public/img/about.png" alt="" />
+      </div>
+      <div class="container pt-20">
+        <h2 class="text-lg font-semibold text-left quote-about">
+          Hai, saya Dhodi Surya Sayogo
+        </h2>
+        <p
+          class="block pt-1 mx-24 text-lg text-justify text-about text-slate-800"
+        >
+          Biasa di panggil Dod panggilan tongkrongan Masboy :D tempat tinggal di
+          Cirebon, Jawa barat. Saya menyukai dengan tantangan dan hal2 baru.
+          Bidang yang sedang saya kuasai yaitu front end.
+        </p>
+      </div>
+      <div class="pt-5">
+        <h2 class="mb-2 ml-4 font-semibold">Hubungi saya melalui :</h2>
+        <div class="ml-4">
+          <a
+            href="https://api.whatsapp.com/send?phone=6285161514085"
+            target="_blank"
+            ><img
+              src="./public/img/sosmed/whatsapp.png"
+              alt="whatsapp"
+              width="50px"
+              class="inline-block mx-[4px] transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300"
+          /></a>
+          <a href="mailto:dhodisuryasayogo@gmail.com" target="_blank"
+            ><img
+              src="./public/img/sosmed/gmail.png"
+              alt="gmail"
+              width="50px"
+              class="inline-block mx-[4px] transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300"
+          /></a>
+          <a href="https://www.instagram.com/dhodisurya.s" target="_blank"
+            ><img
+              src="./public/img/sosmed/instagram.png"
+              alt="instagram"
+              width="50px"
+              class="inline-block mx-[4px] transition ease-in-out delay-100 hover:-translate-y-1 hover:scale-110 duration-300"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <div id="project" class="py-20 text-center">
+      <div class="pt-10 text-3xl font-bold">Project</div>
+      <div
+        class="container p-10 mx-auto mt-10 border rounded-lg shadow-lg bg-slate-400 h-90 card-porto card-image"
+      >
+        <div class="content-start">
+          <a
+            href="https://adcom-stmikikmi.netlify.app/"
+            class="inline-block mx-2 transition duration-300 ease-in-out delay-100 image-bottom hover:-translate-y-1 hover:scale-110"
+            target="_blank"
+            ><img
+              src="./public/img/porto/adcom-vue.png"
+              alt="adcom"
+              width="250px"
+              height="400px"
+          /></a>
+          <a
+            href="https://himatif-stmik.netlify.app/"
+            class="inline-block mx-2 transition duration-300 ease-in-out delay-100 hover:-translate-y-1 hover:scale-110"
+            target="_blank"
+            ><img
+              src="./public/img/porto/himatif-vue.png"
+              alt="himatif"
+              width="250px"
+              height="400px"
+          /></a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="py-2 text-center bg-[#073b4c] text-white">
+        <h1 class="font-semibold text-1xl">Cirebon, Jawa Barat, Indonesia</h1>
+      </div>
+    </footer>
+
+    <script src="./public/js/script.js"></script>
+  </body>
+</html>
