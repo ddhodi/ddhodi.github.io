@@ -42,6 +42,10 @@
           background-color: rgba(32, 89, 116, 0.589);
           backdrop-filter: blur(5px);
         }
+        .glass-card {
+          background-color: rgba(32, 89, 116, 0.589);
+          backdrop-filter: blur(5px);
+        }
         label #btn,
         label #close {
           color: rgb(255, 255, 255);
@@ -121,7 +125,7 @@
             </label>
             <nav
               id="nav-list"
-              class="hidden absolute bg-white shadow-lg max-w-[385px] w-full right-4 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none"
+              class="hidden absolute bg-white shadow-lg w-full right-0.5 top-full lg:block lg:static lg:bg-transparent lg:max-w-full lg:shadow-none"
             >
               <ul class="block hamburger-width lg:flex">
                 <li class="group">
@@ -226,15 +230,15 @@
     <div id="project" class="py-20 text-center">
       <div class="pt-10 text-3xl font-bold">Project</div>
       <div
-        class="container p-10 mx-auto mt-10 border rounded-lg shadow-lg bg-slate-400 h-90 card-porto card-image"
+        class="container p-10 mx-auto mt-10 border rounded-lg shadow-lg glass-card h-90 card-porto card-image"
       >
-        <div class="content-start">
+        <div class="content-start lg:flex lg:justify-start">
           <a
             href="https://adcom-stmikikmi.netlify.app/"
             class="inline-block mx-2 transition duration-300 ease-in-out delay-100 image-bottom hover:-translate-y-1 hover:scale-110"
             target="_blank"
             ><img
-              src="./public/img/porto/adcom-vue.png"
+              src="./public/img/porto/adcom.png"
               alt="adcom"
               width="250px"
               height="400px"
@@ -244,7 +248,7 @@
             class="inline-block mx-2 transition duration-300 ease-in-out delay-100 hover:-translate-y-1 hover:scale-110"
             target="_blank"
             ><img
-              src="./public/img/porto/himatif-vue.png"
+              src="./public/img/porto/hima.png"
               alt="himatif"
               width="250px"
               height="400px"
