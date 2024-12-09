@@ -1,0 +1,194 @@
+/* body */
+body {
+  background-color: #222831;
+}
+
+/* image icon */
+.iconHead {
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconHead img {
+  width: 300px;
+}
+/* close image icon */
+
+/* underline navbar tabs */
+.navbar {
+  background-color: #31363f;
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+}
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #2839ce;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+/* close underline navbar */
+
+/* navbar */
+.navbar-brand {
+  display: none;
+}
+
+.icon-sosmed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.icon-sosmed a {
+  color: white;
+}
+
+.spaceIklan {
+  display: none;
+}
+
+#navbarTogglerDemo02 {
+  margin-left: 120px;
+}
+
+/* navbar */
+
+/* card  */
+.custom-card {
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.custom-card a {
+  text-decoration: none;
+  color: white;
+}
+/* close card */
+
+/* hiro */
+.hero {
+  margin: 200px;
+  display: flex;
+  justify-content: center;
+}
+
+/* scroll button top */
+#scrollToTopBtn {
+  display: none;
+  width: 60px;
+  height: 60px;
+  margin-right: 60px;
+  margin-bottom: 10px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  background-color: #f8f9fa; /* Light background */
+  color: #343a40; /* Dark icon */
+  box-shadow: 0px 7px 9px rgba(0, 0, 0, 0.596);
+}
+
+#scrollToTopBtn i {
+  font-size: 35px;
+}
+
+/* Hover effect */
+#scrollToTopBtn:hover {
+  opacity: 0.8;
+  transform: scale(1.1);
+}
+
+/* close scroll button top */
+/* pagination */
+.page-item.active .page-link {
+  background-color: #007bff;
+  color: white;
+  border-color: #007bff;
+}
+.content-section {
+  display: none;
+}
+.content-section.active {
+  display: block;
+}
+/* close pagination */
+/* responsive mode */
+@media (max-width: 768px) {
+  #scrollToTopBtn {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+
+  #scrollToTopBtn i {
+    font-size: 30px;
+  }
+
+  #navbarTogglerDemo02 {
+    margin-left: 0;
+  }
+
+  .navbar-brand {
+    display: block;
+  }
+  .nav-link.active::after {
+    content: none;
+  }
+
+  .spaceIklan {
+    display: block;
+  }
+
+  .spaceIklan h2 {
+    margin-top: 10px;
+  }
+
+  .spaceIklan button {
+    width: 150px;
+    height: 50px;
+    color: #ffffff;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid #43fc3d;
+    background: #09ff00;
+    transition: all 0.5s;
+  }
+  .spaceIklan button i {
+    margin-right: 5px;
+  }
+  .spaceIklan button:focus {
+    outline: none;
+  }
+
+  .btn-wa {
+    border: none;
+  }
+
+  .btn-wa:hover {
+    box-shadow: inset -2px -2px 4px #353535, inset 2px 2px 4px #000;
+  }
+
+  .checkbox-label {
+    margin-top: 20px;
+  }
+}

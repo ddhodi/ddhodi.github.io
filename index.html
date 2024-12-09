@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>KarirCirebon</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <!-- FontAwesome link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="iconHead">
+      <img src="./img/icon.png" alt="icon" />
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top" id="navbar">
+      <div class="container">
+        <!-- <a class="navbar-brand fs-3" href="#">KarirCirebon</a> -->
+        <div class="icon-sosmed gap-2">
+          <a href="#" target="_blank" alt="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="#" target="_blank" alt="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 fw-normal">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Cari Lowongan</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tentang Kami</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pasang Iklan/Lowongan</a>
+            </li>
+          </ul>
+          <!-- search form -->
+          <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+          <!-- button dark mode -->
+          <div class="spaceIklan">
+            <h2>Contact pemasaran iklan</h2>
+            <hr />
+            <button class="btn-wa">
+              <i class="fa-brands fa-whatsapp"></i> WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container p-5" id="content-1">
+      <div class="row">
+        <!-- Card 1 -->
+        <div class="col-sm-6 mb-4">
+          <div class="card custom-card shadow-sm">
+            <a href="#" target="_blank">
+              <div class="card-body">
+                <img
+                  src="./img/perusahaan/90eaFskg_400x400.jpg"
+                  class="card-image"
+                  width="80"
+                />
+                <h4 class="card-title">Reporter Tipi</h4>
+                <p class="card-text">Terang Tipi Nasional Indonesia</p>
+                <p class="card-place m-0">Bogor, Jakarta</p>
+                <p class="card-klasifikasi">jurnalistik</p>
+                <p class="hour-text">12 minggu yang lalu</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="col-sm-6 mb-4">
+          <div class="card custom-card shadow-sm">
+            <a href="#" target="_blank">
+              <div class="card-body">
+                <img
+                  src="./img/perusahaan/90eaFskg_400x400.jpg"
+                  class="card-imag"
+                  width="80"
+                />
+                <h4 class="card-title">Reporter Tipi</h4>
+                <p class="card-text">Terang Tipi Nasional Indonesia</p>
+                <p class="card-place m-0">Bogor, Jakarta</p>
+                <p class="card-klasifikasi">jurnalistik</p>
+                <p class="hour-text">12 minggu yang lalu</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Pagination -->
+    <div aria-label="Page navigation example" class="mt-4">
+      <ul class="pagination justify-content-center">
+        <li class="page-item disabled" id="prev-page">
+          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+        </li>
+        <li class="page-item active"><a class="page-link" href="#" data-page="1">1</a></li>
+        <!-- <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
+        <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
+        <li class="page-item"><a class="page-link" href="#" data-page="4">4</a></li> -->
+        <li class="page-item" id="next-page">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </div>
+    <!-- Scroll to Top Button -->
+    <button
+      id="scrollToTopBtn"
+      class="btn position-fixed"
+      style="bottom: 20px; right: 20px; display: none; z-index: 1000"
+    >
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="main.js"></script>
+  </body>
+</html>
