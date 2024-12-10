@@ -69,7 +69,7 @@ paginationItems.forEach((item) => {
   });
 });
 
-// Handle Previous and Next buttons
+// Handle Previous and Next buttons pgination
 prevPage.addEventListener("click", (e) => {
   e.preventDefault();
   const activePage = document.querySelector(".pagination .active .page-link").dataset.page;
@@ -86,6 +86,7 @@ nextPage.addEventListener("click", (e) => {
   }
 });
 
+// button search
 document.addEventListener("DOMContentLoaded", () => {
   const searchButton = document.getElementById("searchButton");
   const searchForm = document.getElementById("searchForm");
