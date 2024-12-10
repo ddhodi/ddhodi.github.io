@@ -39,10 +39,6 @@ body {
 /* close underline navbar */
 
 /* navbar */
-.navbar-brand {
-  display: none;
-}
-
 .icon-sosmed {
   display: flex;
   justify-content: center;
@@ -56,10 +52,6 @@ body {
 
 .spaceIklan {
   display: none;
-}
-
-#navbarTogglerDemo02 {
-  margin-left: 120px;
 }
 
 /* navbar */
