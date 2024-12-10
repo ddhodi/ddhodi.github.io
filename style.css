@@ -159,7 +159,7 @@ footer {
 }
 /* responsive mode */
 @media (max-width: 768px) {
-  .container #searchButton {
+  #searchButton {
     display: flex;
   }
   .navbar-brand img {
