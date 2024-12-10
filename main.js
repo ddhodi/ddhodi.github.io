@@ -86,3 +86,32 @@ nextPage.addEventListener("click", (e) => {
   }
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+  const searchButton = document.getElementById("searchButton");
+  const searchForm = document.getElementById("searchForm");
+
+  // Toggle search form saat tombol search diklik
+  searchButton.addEventListener("click", () => {
+    if (searchForm.classList.contains("d-none")) {
+      searchForm.classList.remove("d-none");
+      searchForm.classList.add("d-block");
+    } else {
+      searchForm.classList.add("d-none");
+      searchForm.classList.remove("d-block");
+    }
+  });
+
+  // Opsional: klik di luar form untuk menyembunyikan
+  document.addEventListener("click", (event) => {
+    if (
+      !searchForm.contains(event.target) &&
+      !searchButton.contains(event.target)
+    ) {
+      searchForm.classList.add("d-none");
+      searchForm.classList.remove("d-block");
+    }
+  });
+});
+
+
+

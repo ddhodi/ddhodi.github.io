@@ -39,7 +39,7 @@ body {
 /* close underline navbar */
 
 /* navbar */
-.icon-sosmed {
+/* .icon-sosmed {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -48,13 +48,38 @@ body {
 
 .icon-sosmed a {
   color: white;
-}
+} */
 
 .spaceIklan {
   display: none;
 }
 
 /* navbar */
+
+/* search form */
+#searchForm {
+  position: fixed;
+  background-color: #31363f;
+  top: 56px; /* Sesuaikan dengan tinggi navbar */
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  display: none; /* Awalnya disembunyikan */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+#searchButton {
+  display: none;
+}
+
+#searchForm.d-block {
+  display: block; /* Tampilkan jika ada class d-block */
+}
+
+#searchForm.d-none {
+  display: none; /* Sembunyikan jika ada class d-none */
+}
+
+/* close search */
 
 /* card  */
 .custom-card {
@@ -119,16 +144,34 @@ body {
 .content-section.active {
   display: block;
 }
+
+.button-pagination {
+  margin: 6%;
+}
 /* close pagination */
+
+/* footer */
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #31363f;
+}
 /* responsive mode */
 @media (max-width: 768px) {
+  .container #searchButton {
+    display: flex;
+  }
   .navbar-brand img {
+    margin-left: 8px;
+    margin-top: 4px;
     width: 100px;
+    height: 19px;
   }
   #scrollToTopBtn {
     width: 50px;
     height: 50px;
-    margin-right: 10px;
+    margin-right: 5px;
   }
 
   #scrollToTopBtn i {
@@ -137,6 +180,9 @@ body {
 
   #navbarTogglerDemo02 {
     margin-left: 0;
+  }
+  .form-search input {
+    display: none;
   }
 
   .navbar-brand {
