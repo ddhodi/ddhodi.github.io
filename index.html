@@ -3,64 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peringatan Keamanan!</title>
+    <title>Verifikasi Keamanan Akun</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        body { background-color: #1a1a1a; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        body { font-family: 'Arial', sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        #box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 85%; max-width: 400px; text-align: center; }
+        .pink-text { color: #e91e63; font-weight: bold; }
+        .btn-main { background: #007bff; color: white; border: none; padding: 15px 25px; border-radius: 5px; font-size: 16px; width: 100%; cursor: pointer; }
         .hidden { display: none; }
-        #final-card { background: white; color: #333; padding: 20px; border-radius: 15px; text-align: center; width: 80%; box-shadow: 0 0 20px rgba(255,77,109,0.5); }
-        img { width: 100%; border-radius: 10px; }
-        h2 { color: #ff4d6d; }
+        #final-msg { animation: fadeIn 2s; }
+        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
     </style>
 </head>
 <body>
 
-    <div id="content" class="hidden">
-        <div id="final-card">
-            <h2>Ciyee Kena Prank! ❤️</h2>
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueGZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiCi7C/giphy.gif">
-            <p>Maaf ya tadi dibikin kesel dulu...</p>
-            <p><b>Happy Valentine!</b> Makasih udah sabar ngadepin aku. I love you!</p>
+    <div id="step-1">
+        <div id="box">
+            <h3 style="color: #333;">Verifikasi Identitas</h3>
+            <p style="font-size: 14px; color: #666;">Sistem mendeteksi ada seseorang yang mencintai kamu terlalu ugal-ugalan. Apakah itu kamu?</p>
+            <button class="btn-main" onclick="startQuiz()">Lanjutkan Verifikasi</button>
+        </div>
+    </div>
+
+    <div id="step-final" class="hidden">
+        <div id="box" style="border: 2px solid #e91e63;">
+            <h2 class="pink-text">VERIFIKASI BERHASIL! ❤️</h2>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2ZicnZueXp4Y3R6bm94ZzRreXJ4ZzRreXJ4ZzRreXJ4ZzRreXJ4ZyZlcD12MV9pbnRlcm5hbV9naWZfYnlfaWQmY3Q9Zw/l41lTjJpguU67O9a0/giphy.gif" width="100%">
+            <p>Selamat! Kamu terbukti sebagai orang paling sayang aku.</p>
+            <p><br><b>Happy Valentine, Sayang!</b></p>
         </div>
     </div>
 
     <script>
-        // Urutan pesan yang bikin kesel
-        async function startPrank() {
-            await Swal.fire('⚠️ PERINGATAN!', 'HP Anda terdeteksi melakukan aktivitas ilegal: TERLALU CUTE.', 'error');
-            await Swal.fire('Sistem Error', 'Mencoba menghapus file "Kenangan Mantan"...', 'warning');
-            await Swal.fire('Gagal!', 'File gagal dihapus karena memori penuh dengan wajah aku.', 'info');
-            
-            let { value: setuju } = await Swal.fire({
-                title: 'Konfirmasi',
-                text: 'Apakah kamu sayang aku hari ini?',
-                icon: 'question',
-                showCancelButton: true,
-                confirmButtonText: 'Iya Sayang',
-                cancelButtonText: 'Gak!'
+        async function startQuiz() {
+            // Level 1
+            const { value: q1 } = await Swal.fire({
+                title: 'Pertanyaan 1',
+                text: 'Siapa orang paling ganteng/cantik sedunia menurut kamu?',
+                input: 'text',
+                inputPlaceholder: 'Isi nama aku...',
+                confirmButtonText: 'Kirim'
             });
 
-            // Kalau dia klik "Gak!", kita paksa dia balik lagi
-            while (!setuju) {
-                await Swal.fire('Dosa loh bohong...', 'Coba jawab lagi yang bener.', 'error');
-                let retry = await Swal.fire({
-                    title: 'Masih mau bilang Gak?',
-                    text: 'Yakin? Beneran?',
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonText: 'Iya deh sayang',
-                    cancelButtonText: 'Tetep Gak!'
-                });
-                setuju = retry.isConfirmed;
+            if (q1.toLowerCase() === 'kamu' || q1.length > 2) {
+                await Swal.fire('Salah!', 'Jawaban yang benar adalah: AKU (pake banget).', 'error');
             }
 
-            // Akhir yang manis
-            await Swal.fire('Jawaban Diterima!', 'Memproses kejutan untukmu...', 'success');
-            document.getElementById('content').classList.remove('hidden');
-            document.body.style.backgroundColor = "#ffe4e1";
-        }
+            // Level 2 - looping sampe dia ngaku
+            let sayang = false;
+            while (!sayang) {
+                const result = await Swal.fire({
+                    title: 'Pertanyaan 2',
+                    text: 'Apakah kamu akan traktir aku makan hari ini?',
+                    icon: 'question',
+                    showCancelButton: true,
+                    confirmButtonText: 'Iya Bos',
+                    cancelButtonText: 'Nggak!'
+                });
+                
+                if (result.isConfirmed) {
+                    sayang = true;
+                } else {
+                    await Swal.fire('Akses Ditolak', 'Tombol "Nggak" sedang rusak, coba tombol satunya.', 'warning');
+                }
+            }
 
-        window.onload = startPrank;
+            // Level 3
+            await Swal.fire({
+                title: 'Langkah Terakhir',
+                text: 'Tutup mata, hitung sampai 3, lalu klik OK.',
+                confirmButtonText: 'OK, udah!'
+            });
+
+            // Munculkan hasil
+            document.getElementById('step-1').classList.add('hidden');
+            document.getElementById('step-final').classList.remove('hidden');
+            document.body.style.backgroundColor = "#fff0f3";
+        }
     </script>
 </body>
 </html>
