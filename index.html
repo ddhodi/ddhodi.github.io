@@ -2,25 +2,70 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Verifikasi Keamanan Akun</title>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        #box { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); width: 85%; max-width: 400px; text-align: center; }
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #f0f2f5; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            min-height: 100vh; 
+            margin: 0; 
+            padding: 20px; /* Jaga jarak dari tepi layar HP */
+            box-sizing: border-box;
+        }
+        
+        #box { 
+            background: white; 
+            padding: 30px; 
+            border-radius: 20px; /* Lebih bulat lebih modern */
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            width: 100%; 
+            max-width: 350px; /* Ukuran ideal di HP */
+            text-align: center; 
+            box-sizing: border-box;
+        }
+
         .pink-text { color: #e91e63; font-weight: bold; }
-        .btn-main { background: #007bff; color: white; border: none; padding: 15px 25px; border-radius: 5px; font-size: 16px; width: 100%; cursor: pointer; }
+        
+        .btn-main { 
+            background: #007bff; 
+            color: white; 
+            border: none; 
+            padding: 15px 25px; 
+            border-radius: 10px; 
+            font-size: 16px; 
+            width: 100%; 
+            cursor: pointer; 
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+        
+        .btn-main:active { transform: scale(0.95); } /* Efek klik di HP */
+
+        img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 15px; 
+            margin: 15px 0;
+        }
+
         .hidden { display: none; }
-        #final-msg { animation: fadeIn 2s; }
-        @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+        
+        /* Animasi halus saat muncul */
+        #step-final { animation: fadeIn 0.8s ease-in-out; }
+        @keyframes fadeIn { from {opacity: 0; transform: translateY(20px);} to {opacity: 1; transform: translateY(0);} }
     </style>
 </head>
 <body>
 
     <div id="step-1">
         <div id="box">
-            <h3 style="color: #333;">Verifikasi Identitas</h3>
-            <p style="font-size: 14px; color: #666;">Sistem mendeteksi ada seseorang yang mencintai kamu terlalu ugal-ugalan. Apakah itu kamu?</p>
+            <h3 style="color: #333; margin-top: 0;">Verifikasi Identitas</h3>
+            <p style="font-size: 14px; color: #666; line-height: 1.5;">Sistem mendeteksi ada seseorang yang mencintai kamu terlalu ugal-ugalan. Apakah itu kamu?</p>
             <button class="btn-main" onclick="startQuiz()">Lanjutkan Verifikasi</button>
         </div>
     </div>
@@ -28,26 +73,30 @@
     <div id="step-final" class="hidden">
         <div id="box" style="border: 2px solid #e91e63;">
             <h2 class="pink-text">VERIFIKASI BERHASIL! ❤️</h2>
-            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2ZicnZueXp4Y3R6bm94ZzRreXJ4ZzRreXJ4ZzRreXJ4ZzRreXJ4ZyZlcD12MV9pbnRlcm5hbV9naWZfYnlfaWQmY3Q9Zw/l41lTjJpguU67O9a0/giphy.gif" width="100%">
-            <p>Selamat! Kamu terbukti sebagai orang yang aku sayang.</p>
-            <p><br><b>Happy Valentine, Sayang!</b></p>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM2ZicnZueXp4Y3R6bm94ZzRreXJ4ZzRreXJ4ZzRreXJ4ZzRreXJ4ZyZlcD12MV9pbnRlcm5hbV9naWZfYnlfaWQmY3Q9Zw/l41lTjJpguU67O9a0/giphy.gif" alt="Happy">
+            <p>Selamat! Kamu terbukti sebagai orang yang paling aku sayang.</p>
+            <p><b>Happy Valentine!</b></p>
         </div>
     </div>
 
     <script>
         async function startQuiz() {
-          // Pertanyaan 1
           const { value: q1 } = await Swal.fire({
               title: 'Pertanyaan 1',
               text: 'Siapa orang yang paling pengen bikin kamu senyum hari ini?',
               input: 'text',
               inputPlaceholder: 'Inisial juga boleh...',
-              confirmButtonText: 'Kirim Jawaban'
+              confirmButtonText: 'Kirim Jawaban',
+              confirmButtonColor: '#007bff'
           });
 
-          await Swal.fire('Informasi Sistem', 'Jawaban kamu disimpan, tapi sebenarnya jawabannya adalah: Penulis kode ini. :)', 'info');
+          await Swal.fire({
+              title: 'Informasi Sistem',
+              text: 'Jawaban disimpan. Tapi sebenarnya jawabannya adalah: Penulis kode ini. :)',
+              icon: 'info',
+              confirmButtonColor: '#007bff'
+          });
 
-          // Pertanyaan 2
           let setuju = false;
           while (!setuju) {
               const result = await Swal.fire({
@@ -56,21 +105,28 @@
                   icon: 'question',
                   showCancelButton: true,
                   confirmButtonText: 'Boleh dong',
-                  cancelButtonText: 'Enggak'
+                  cancelButtonText: 'Enggak',
+                  confirmButtonColor: '#007bff',
+                  cancelButtonColor: '#aaa'
               });
               
               if (result.isConfirmed) {
                   setuju = true;
               } else {
-                  await Swal.fire('Error 404', 'Maaf, jawaban "Enggak" tidak ditemukan di database kami. Silakan coba lagi.', 'error');
+                  await Swal.fire({
+                      title: 'Error 404',
+                      text: 'Maaf, jawaban "Enggak" tidak ditemukan di database kami. Silakan coba lagi ya.',
+                      icon: 'error',
+                      confirmButtonColor: '#007bff'
+                  });
               }
           }
 
-          // Akhiran
           await Swal.fire({
               title: 'Verifikasi Selesai',
               text: 'Silakan lihat pesan terakhir di bawah ini...',
-              confirmButtonText: 'Buka Pesan'
+              confirmButtonText: 'Buka Pesan',
+              confirmButtonColor: '#e91e63'
           });
 
           document.getElementById('step-1').classList.add('hidden');
