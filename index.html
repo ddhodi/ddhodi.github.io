@@ -1,191 +1,66 @@
 <!DOCTYPE html>
-<html lang="en" data-bs-theme="dark">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/x-icon" href="./img/tab.png" />
-    <title>KarirCirebon</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <!-- FontAwesome link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css"
-    />
-  </head>
-  <body>
-    <!-- <div class="iconHead">
-      <img src="./img/icon.png" alt="icon" />
-    </div> -->
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peringatan Keamanan!</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        body { background-color: #1a1a1a; color: white; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .hidden { display: none; }
+        #final-card { background: white; color: #333; padding: 20px; border-radius: 15px; text-align: center; width: 80%; box-shadow: 0 0 20px rgba(255,77,109,0.5); }
+        img { width: 100%; border-radius: 10px; }
+        h2 { color: #ff4d6d; }
+    </style>
+</head>
+<body>
 
-    <nav class="navbar navbar-expand-lg sticky-top" id="navbar">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img
-            src="./img/icon2.png"
-            width="200"
-            height="25"
-            class="d-inline-block align-top"
-            alt=""
-          />
-        </a>
-        <!-- Tombol untuk memunculkan search form -->
-        <button id="searchButton" class="btn btn-outline-light">
-          <i class="fa-solid fa-magnifying-glass"></i>
-        </button>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarTogglerDemo02"
-          aria-controls="navbarTogglerDemo02"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 fs-5 fw-normal">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Cari Lowongan</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Tentang Kami</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Pasang Iklan/Lowongan</a>
-            </li>
-          </ul>
-          <!-- search form -->
-          <form class="d-flex form-search" role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-          </form>
-          <!-- button spaceIklan -->
-          <div class="spaceIklan">
-            <h2>Contact pemasaran iklan</h2>
-            <hr />
-            <button class="btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> WhatsApp
-            </button>
-          </div>
+    <div id="content" class="hidden">
+        <div id="final-card">
+            <h2>Ciyee Kena Prank! ❤️</h2>
+            <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExOHpueGZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4bmZ4JmVwPXYxX2ludGVybmFsX2dpZl9ieV9pZCZjdD1n/KztT2c4u8mYYUiCi7C/giphy.gif">
+            <p>Maaf ya tadi dibikin kesel dulu...</p>
+            <p><b>Happy Valentine!</b> Makasih udah sabar ngadepin aku. I love you!</p>
         </div>
-      </div>
-    </nav>
-    <!-- Search Form -->
-    <div id="searchForm" class="p-3 d-none shadow">
-      <div class="container">
-        <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-        </form>
-      </div>
-    </div>
-    <!-- Search Form
-    <form id="searchForm" class="d-flex" role="search">
-      <input
-        class="form-control me-2"
-        type="search"
-        placeholder="Search"
-        aria-label="Search"
-      />
-    </form> -->
-
-    <div class="container p-5" id="content-1">
-      <div class="row">
-        <!-- Card 1 -->
-        <div class="col-sm-6 mb-4">
-          <div class="card custom-card shadow-sm">
-            <a href="#" target="_blank">
-              <div class="card-body">
-                <img
-                  src="./img/perusahaan/90eaFskg_400x400.jpg"
-                  class="card-image"
-                  width="80"
-                />
-                <h4 class="card-title">Reporter Tipi</h4>
-                <p class="card-text">Terang Tipi Nasional Indonesia</p>
-                <p class="card-place m-0">Bogor, Jakarta</p>
-                <p class="card-klasifikasi">jurnalistik</p>
-                <p class="hour-text">12 minggu yang lalu</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <!-- Card 2 -->
-        <div class="col-sm-6 mb-4">
-          <div class="card custom-card shadow-sm">
-            <a href="#" target="_blank">
-              <div class="card-body">
-                <img
-                  src="./img/perusahaan/90eaFskg_400x400.jpg"
-                  class="card-imag"
-                  width="80"
-                />
-                <h4 class="card-title">Reporter Tipi</h4>
-                <p class="card-text">Terang Tipi Nasional Indonesia</p>
-                <p class="card-place m-0">Bogor, Jakarta</p>
-                <p class="card-klasifikasi">jurnalistik</p>
-                <p class="hour-text">12 minggu yang lalu</p>
-              </div>
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
 
-    <!-- Pagination -->
-    <div aria-label="Page navigation example" class="mt-4">
-      <ul class="pagination justify-content-center">
-        <li class="page-item disabled" id="prev-page">
-          <a class="page-link" href="#" tabindex="-1" aria-disabled="true"
-            >Previous</a
-          >
-        </li>
-        <li class="page-item active">
-          <a class="page-link" href="#" data-page="1">1</a>
-        </li>
-        <!-- <li class="page-item"><a class="page-link" href="#" data-page="2">2</a></li>
-        <li class="page-item"><a class="page-link" href="#" data-page="3">3</a></li>
-        <li class="page-item"><a class="page-link" href="#" data-page="4">4</a></li> -->
-        <li class="page-item" id="next-page">
-          <a class="page-link" href="#">Next</a>
-        </li>
-      </ul>
-    </div>
-    <!-- Scroll to Top Button -->
-    <div class="button-pagination">
-      <button
-        id="scrollToTopBtn"
-        class="btn position-fixed"
-        style="bottom: 20px; right: 20px; display: none; z-index: 1000"
-      >
-        <i class="fas fa-arrow-up"></i>
-      </button>
-    </div>
+    <script>
+        // Urutan pesan yang bikin kesel
+        async function startPrank() {
+            await Swal.fire('⚠️ PERINGATAN!', 'HP Anda terdeteksi melakukan aktivitas ilegal: TERLALU CUTE.', 'error');
+            await Swal.fire('Sistem Error', 'Mencoba menghapus file "Kenangan Mantan"...', 'warning');
+            await Swal.fire('Gagal!', 'File gagal dihapus karena memori penuh dengan wajah aku.', 'info');
+            
+            let { value: setuju } = await Swal.fire({
+                title: 'Konfirmasi',
+                text: 'Apakah kamu sayang aku hari ini?',
+                icon: 'question',
+                showCancelButton: true,
+                confirmButtonText: 'Iya Sayang',
+                cancelButtonText: 'Gak!'
+            });
 
-    <footer class="bg-dark text-center text-white py-3">
-      <div class="container">
-        <p class="mb-0">Hak Cipta &copy; KarirCirebon 2025</p>
-      </div>
-    </footer>
-    <!-- JS -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+            // Kalau dia klik "Gak!", kita paksa dia balik lagi
+            while (!setuju) {
+                await Swal.fire('Dosa loh bohong...', 'Coba jawab lagi yang bener.', 'error');
+                let retry = await Swal.fire({
+                    title: 'Masih mau bilang Gak?',
+                    text: 'Yakin? Beneran?',
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonText: 'Iya deh sayang',
+                    cancelButtonText: 'Tetep Gak!'
+                });
+                setuju = retry.isConfirmed;
+            }
 
-    <script src="main.js"></script>
-  </body>
+            // Akhir yang manis
+            await Swal.fire('Jawaban Diterima!', 'Memproses kejutan untukmu...', 'success');
+            document.getElementById('content').classList.remove('hidden');
+            document.body.style.backgroundColor = "#ffe4e1";
+        }
+
+        window.onload = startPrank;
+    </script>
+</body>
 </html>
