@@ -36,50 +36,47 @@
 
     <script>
         async function startQuiz() {
-            // Level 1
-            const { value: q1 } = await Swal.fire({
-                title: 'Pertanyaan 1',
-                text: 'Siapa orang paling ganteng/cantik sedunia menurut kamu?',
-                input: 'text',
-                inputPlaceholder: 'Isi nama aku...',
-                confirmButtonText: 'Kirim'
-            });
+          // Pertanyaan 1
+          const { value: q1 } = await Swal.fire({
+              title: 'Pertanyaan 1',
+              text: 'Siapa orang yang paling pengen bikin kamu senyum hari ini?',
+              input: 'text',
+              inputPlaceholder: 'Inisial juga boleh...',
+              confirmButtonText: 'Kirim Jawaban'
+          });
 
-            if (q1.toLowerCase() === 'kamu' || q1.length > 2) {
-                await Swal.fire('Salah!', 'Jawaban yang benar adalah: AKU (pake banget).', 'error');
-            }
+          await Swal.fire('Informasi Sistem', 'Jawaban kamu disimpan, tapi sebenarnya jawabannya adalah: Penulis kode ini. :)', 'info');
 
-            // Level 2 - looping sampe dia ngaku
-            let sayang = false;
-            while (!sayang) {
-                const result = await Swal.fire({
-                    title: 'Pertanyaan 2',
-                    text: 'Apakah kamu akan traktir aku makan hari ini?',
-                    icon: 'question',
-                    showCancelButton: true,
-                    confirmButtonText: 'Iya Bos',
-                    cancelButtonText: 'Nggak!'
-                });
-                
-                if (result.isConfirmed) {
-                    sayang = true;
-                } else {
-                    await Swal.fire('Akses Ditolak', 'Tombol "Nggak" sedang rusak, coba tombol satunya.', 'warning');
-                }
-            }
+          // Pertanyaan 2
+          let setuju = false;
+          while (!setuju) {
+              const result = await Swal.fire({
+                  title: 'Pertanyaan 2',
+                  text: 'Boleh nggak kalau hari ini aku minta waktu kamu sebentar buat bilang sesuatu?',
+                  icon: 'question',
+                  showCancelButton: true,
+                  confirmButtonText: 'Boleh dong',
+                  cancelButtonText: 'Enggak'
+              });
+              
+              if (result.isConfirmed) {
+                  setuju = true;
+              } else {
+                  await Swal.fire('Error 404', 'Maaf, jawaban "Enggak" tidak ditemukan di database kami. Silakan coba lagi.', 'error');
+              }
+          }
 
-            // Level 3
-            await Swal.fire({
-                title: 'Langkah Terakhir',
-                text: 'Tutup mata, hitung sampai 3, lalu klik OK.',
-                confirmButtonText: 'OK, udah!'
-            });
+          // Akhiran
+          await Swal.fire({
+              title: 'Verifikasi Selesai',
+              text: 'Silakan lihat pesan terakhir di bawah ini...',
+              confirmButtonText: 'Buka Pesan'
+          });
 
-            // Munculkan hasil
-            document.getElementById('step-1').classList.add('hidden');
-            document.getElementById('step-final').classList.remove('hidden');
-            document.body.style.backgroundColor = "#fff0f3";
-        }
+          document.getElementById('step-1').classList.add('hidden');
+          document.getElementById('step-final').classList.remove('hidden');
+          document.body.style.backgroundColor = "#fff0f3";
+      }
     </script>
 </body>
 </html>
